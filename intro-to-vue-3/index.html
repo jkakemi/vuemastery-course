@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Mastery</title>
+    <link rel="stylesheet" href="./assets/styles.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <!-- A mudança é possível pois o Vue é reativo, logo, quaisquer valores
+     alterados no objeto do main.js, terá consequência imediata no front -->
+    <div id="app">
+        <h1>{{ product }}</h1>
+        <p>Color: {{ color }}</p>
+        <p>Description: {{ description }}</p>
+    </div>
+    
+    <!-- Import App -->
+    <script src="./main.js"></script>
+    <!-- Mount App -->
+     <script>
+        const mountedApp = app.mount('#app')
+     </script>
+</body>
+</html>
