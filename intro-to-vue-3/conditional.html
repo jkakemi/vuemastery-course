@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="app1">
+    <div id="app2">
         <div class="nav-bar"></div>
 
         <div class="product-display">
@@ -18,10 +18,17 @@
                     <!-- v-bind: vincular dinamicamente um atributo para uma expressão -->
                     <!-- <img v-bind:src="image" alt=""> -->
                     <img :src="image" alt="">
-                    <a :href="url">Socks on Amazon</a>
+                    <!-- <a :href="url">Socks on Amazon</a> -->
                 </div>
                 <div class="product-info">
                     <h1>{{ product }}</h1>
+                    <p v-if="inventory > 10">In Stock</p>
+                    <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out!</p>
+                    <p v-else>Out of Stock</p>
+                    <!-- Challenge -->
+                     <p v-if="onSale == true">On Sale</p>
+                     <p v-else>Not for Sale</p>
+                    <!-- <p v-show="inStock">In Stock</p> -->
                 </div>
             </div>
         </div>
@@ -31,7 +38,7 @@
     <script src="./main.js"></script>
     <!-- Mount App -->
      <script>
-        const mountedApp = app1.mount('#app1')
+        const mountedApp = app2.mount('#app2')
      </script>
 </body>
 </html>
