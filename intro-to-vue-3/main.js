@@ -34,3 +34,23 @@ const app2 = Vue.createApp({
         }
     }
 })
+
+// AULA 4
+
+const app3 = Vue.createApp({
+    data(){
+        return{
+            product: 'Socks',
+            image: './assets/images/socks_green.jpg',
+            inStock: true,
+            // inventory: 100,
+            // Lista para percorrer
+            details: ['50% cotton', '30% wool', '20% polyester'],
+            variants: [
+                { id: 2234, color: 'green'},
+                { id: 2235, color: 'blue'},
+            ],
+            sizes: ['PP', 'P', 'M', 'G', 'GG', 'XGG']
+        }
+    }
+})
