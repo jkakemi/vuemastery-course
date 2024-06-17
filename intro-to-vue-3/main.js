@@ -91,7 +91,7 @@ const app4 = Vue.createApp({
     }
 })
 
-// AULA 5
+// AULA 6
 
 const app5 = Vue.createApp({
     data(){
@@ -128,6 +128,72 @@ const app5 = Vue.createApp({
                 this.cart -= 1
                 this.inventory += 1
             }
+        }
+    }
+})
+
+// AULA 7
+
+const app6 = Vue.createApp({
+    data(){
+        return{
+            //inventory: 10,
+            cart: 0,
+            brand: 'Vue Mastery',
+            product: 'Socks',
+            selectedVariant: 0,
+            // image: './assets/images/socks_green.jpg',
+            // inStock: true,
+            details: ['50% cotton', '30% wool', '20% polyester'],
+            variants: [
+                { id: 2234, color: 'green', image: './assets/images/socks_green.jpg', quantity: 50},
+                { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg', quantity: 0},
+            ],
+            onSale: true
+        }
+    },
+    methods: {
+        addToCart(){
+            this.cart += 1
+            // if(this.inventory > 0 && this.inventory < 11){
+            //     this.cart += 1
+            //     this.inventory -= 1
+            //     if(this.inventory == 0){
+            //         this.inStock = false
+            //     }
+            // }
+        },
+        updateVariant(index){
+            this.selectedVariant = index
+            // console.log(index)
+        }
+        // removeToCart(){
+        //     if(this.cart < 1){
+        //         this.cart = 0;
+        //     }
+        //     else{
+        //         this.cart -= 1
+        //         this.inventory += 1
+        //         if(this.inventory > 0){
+        //             this.inStock = true
+        //         }
+        //     }
+        // }
+    },
+    computed: {
+        title(){
+            return this.brand + ' ' + this.product
+        },
+        onsale(){
+            if(this.onSale == true){
+                return this.brand + ' ' + this.product
+            }
+        },
+        image(){
+            return this.variants[this.selectedVariant].image
+        },
+        inStock(){
+            return this.variants[this.selectedVariant].quantity
         }
     }
 })
