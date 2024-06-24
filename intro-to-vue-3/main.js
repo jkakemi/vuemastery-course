@@ -198,6 +198,8 @@ const app6 = Vue.createApp({
     }
 })
 
+// AULA 8
+
 const app7 = Vue.createApp({
     data(){
         return{
@@ -207,5 +209,24 @@ const app7 = Vue.createApp({
     },
     methods: {
         
+    }
+})
+
+// AULA 9
+
+const app8 = Vue.createApp({
+    data(){
+        return{
+            cart: [],
+            premium: true,
+        }
+    },
+    methods: {
+        addCart(id){
+            this.cart.push(id)
+        },
+        removeCart(id){
+            this.cart.pop(id)
+        }
     }
 })
