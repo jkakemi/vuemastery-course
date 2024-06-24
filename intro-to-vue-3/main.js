@@ -197,3 +197,15 @@ const app6 = Vue.createApp({
         }
     }
 })
+
+const app7 = Vue.createApp({
+    data(){
+        return{
+            cart: 0,
+            premium: true,
+        }
+    },
+    methods: {
+        
+    }
+})
